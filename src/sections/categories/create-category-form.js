@@ -18,12 +18,12 @@ export const CreateCategoryForm = () => {
         async (event) => {
             event.preventDefault();
             try {
-                const response = await fetch('http://localhost:3002/category/create', {
+                const response = await fetch('https://152.44.43.112:3002/category/create', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ categoryName: category }),
+                    body: JSON.stringify({ categoryName: category })
                 });
 
                 if (!response.ok) {
@@ -41,22 +41,12 @@ export const CreateCategoryForm = () => {
     );
 
     return (
-        <form
-            autoComplete="off"
-            noValidate
-            onSubmit={handleSubmit}
-        >
+        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
             <Card>
                 <CardContent sx={{ pt: 0 }}>
                     <Box sx={{ pt: 1 }}>
-                        <Grid
-                            container
-                            spacing={3}
-                        >
-                            <Grid
-                                xs={12}
-                                md={6}
-                            >
+                        <Grid container spacing={3}>
+                            <Grid xs={12} md={6}>
                                 <TextField
                                     fullWidth
                                     helperText="Моля добавете име на категория"
